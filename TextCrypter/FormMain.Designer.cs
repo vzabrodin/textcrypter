@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -53,13 +54,13 @@
 			this.miEditSelectAll = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.miEditShowEncryptedText = new System.Windows.Forms.ToolStripMenuItem();
+			this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.miFormatWordWrap = new System.Windows.Forms.ToolStripMenuItem();
+			this.miFormatFont = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.miHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-			this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.miFormatWordWrap = new System.Windows.Forms.ToolStripMenuItem();
-			this.miFormatFont = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -292,6 +293,30 @@
 			this.miEditShowEncryptedText.Text = "Show encrypted text";
 			this.miEditShowEncryptedText.Click += new System.EventHandler(this.miEditHideEncryptedText_Click);
 			// 
+			// formatToolStripMenuItem
+			// 
+			this.formatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miFormatWordWrap,
+            this.miFormatFont});
+			this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
+			this.formatToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+			this.formatToolStripMenuItem.Text = "Format";
+			// 
+			// miFormatWordWrap
+			// 
+			this.miFormatWordWrap.CheckOnClick = true;
+			this.miFormatWordWrap.Name = "miFormatWordWrap";
+			this.miFormatWordWrap.Size = new System.Drawing.Size(134, 22);
+			this.miFormatWordWrap.Text = "Word Wrap";
+			this.miFormatWordWrap.Click += new System.EventHandler(this.miFormatWordWrap_Click);
+			// 
+			// miFormatFont
+			// 
+			this.miFormatFont.Name = "miFormatFont";
+			this.miFormatFont.Size = new System.Drawing.Size(134, 22);
+			this.miFormatFont.Text = "Font...";
+			this.miFormatFont.Click += new System.EventHandler(this.miFormatFont_Click);
+			// 
 			// helpToolStripMenuItem
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -316,30 +341,6 @@
 			// 
 			this.saveFileDialog1.Filter = "TextCrypt file (*.textcrypt)|*.textcrypt|Text file (*.txt)|*.txt";
 			// 
-			// formatToolStripMenuItem
-			// 
-			this.formatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miFormatWordWrap,
-            this.miFormatFont});
-			this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
-			this.formatToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-			this.formatToolStripMenuItem.Text = "Format";
-			// 
-			// miFormatWordWrap
-			// 
-			this.miFormatWordWrap.CheckOnClick = true;
-			this.miFormatWordWrap.Name = "miFormatWordWrap";
-			this.miFormatWordWrap.Size = new System.Drawing.Size(152, 22);
-			this.miFormatWordWrap.Text = "Word Wrap";
-			this.miFormatWordWrap.Click += new System.EventHandler(this.miFormatWordWrap_Click);
-			// 
-			// miFormatFont
-			// 
-			this.miFormatFont.Name = "miFormatFont";
-			this.miFormatFont.Size = new System.Drawing.Size(152, 22);
-			this.miFormatFont.Text = "Font...";
-			this.miFormatFont.Click += new System.EventHandler(this.miFormatFont_Click);
-			// 
 			// FormMain
 			// 
 			this.AllowDrop = true;
@@ -348,6 +349,7 @@
 			this.ClientSize = new System.Drawing.Size(584, 361);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.menuStrip1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.MinimumSize = new System.Drawing.Size(300, 300);
 			this.Name = "FormMain";
