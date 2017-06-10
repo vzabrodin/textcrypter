@@ -11,13 +11,19 @@ namespace TextCrypter
 		private bool isFileSaved = true;
 
 		private CryptFileMan fm;
+		private FormMainConfig cfg;
 
 		public FormMain()
 		{
 			fm = new CryptFileMan();
+			cfg = FormMainConfig.FromRegistry();
 
 			InitializeComponent();
 			Text = Application.ProductName;
+
+			textBox1.Font = textBox2.Font = cfg.Font;
+			splitContainer1.Panel2Collapsed = !(miEditShowEncryptedText.Checked = cfg.ShowEncryptedText);
+			textBox1.WordWrap = textBox2.WordWrap = miFormatWordWrap.Checked = cfg.WordWrap;
 		}
 
 		public FormMain(string filename) : this()
@@ -63,7 +69,7 @@ namespace TextCrypter
 
 		private void miEditHideEncryptedText_Click(object sender, EventArgs e)
 		{
-			splitContainer1.Panel2Collapsed = !miEditShowEncryptedText.Checked;
+			splitContainer1.Panel2Collapsed = !(cfg.ShowEncryptedText = miEditShowEncryptedText.Checked);
 		}
 
 		private void miFileNew_Click(object sender, EventArgs e)
@@ -272,6 +278,21 @@ namespace TextCrypter
 			string[] dragDropFiles = (string[])e.Data.GetData(DataFormats.FileDrop);
 			if (dragDropFiles.Length != 1) return;
 			FileOpen_Helper(dragDropFiles[0]);
+		}
+
+		private void miFormatWordWrap_Click(object sender, EventArgs e)
+		{
+			cfg.WordWrap = textBox1.WordWrap = textBox2.WordWrap = (sender as ToolStripMenuItem).Checked;
+		}
+
+		private void miFormatFont_Click(object sender, EventArgs e)
+		{
+			FontDialog fd = new FontDialog();
+			fd.Font = cfg.Font;
+			if (fd.ShowDialog() == DialogResult.OK)
+			{
+				cfg.Font = textBox1.Font = textBox2.Font = fd.Font;
+			}
 		}
 	}
 }

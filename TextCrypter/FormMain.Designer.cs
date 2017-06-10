@@ -57,6 +57,9 @@
 			this.miHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.miFormatWordWrap = new System.Windows.Forms.ToolStripMenuItem();
+			this.miFormatFont = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -114,6 +117,7 @@
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
+            this.formatToolStripMenuItem,
             this.helpToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
@@ -280,10 +284,10 @@
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
 			this.toolStripSeparator5.Size = new System.Drawing.Size(178, 6);
 			// 
-			// miEditHideEncryptedText
+			// miEditShowEncryptedText
 			// 
 			this.miEditShowEncryptedText.CheckOnClick = true;
-			this.miEditShowEncryptedText.Name = "miEditHideEncryptedText";
+			this.miEditShowEncryptedText.Name = "miEditShowEncryptedText";
 			this.miEditShowEncryptedText.Size = new System.Drawing.Size(181, 22);
 			this.miEditShowEncryptedText.Text = "Show encrypted text";
 			this.miEditShowEncryptedText.Click += new System.EventHandler(this.miEditHideEncryptedText_Click);
@@ -311,6 +315,30 @@
 			// saveFileDialog1
 			// 
 			this.saveFileDialog1.Filter = "TextCrypt file (*.textcrypt)|*.textcrypt|Text file (*.txt)|*.txt";
+			// 
+			// formatToolStripMenuItem
+			// 
+			this.formatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miFormatWordWrap,
+            this.miFormatFont});
+			this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
+			this.formatToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+			this.formatToolStripMenuItem.Text = "Format";
+			// 
+			// miFormatWordWrap
+			// 
+			this.miFormatWordWrap.CheckOnClick = true;
+			this.miFormatWordWrap.Name = "miFormatWordWrap";
+			this.miFormatWordWrap.Size = new System.Drawing.Size(152, 22);
+			this.miFormatWordWrap.Text = "Word Wrap";
+			this.miFormatWordWrap.Click += new System.EventHandler(this.miFormatWordWrap_Click);
+			// 
+			// miFormatFont
+			// 
+			this.miFormatFont.Name = "miFormatFont";
+			this.miFormatFont.Size = new System.Drawing.Size(152, 22);
+			this.miFormatFont.Text = "Font...";
+			this.miFormatFont.Click += new System.EventHandler(this.miFormatFont_Click);
 			// 
 			// FormMain
 			// 
@@ -371,6 +399,9 @@
 		private System.Windows.Forms.ToolStripMenuItem miEditShowEncryptedText;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+		private System.Windows.Forms.ToolStripMenuItem formatToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem miFormatWordWrap;
+		private System.Windows.Forms.ToolStripMenuItem miFormatFont;
 	}
 }
 

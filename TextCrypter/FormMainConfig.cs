@@ -12,6 +12,7 @@ namespace TextCrypter
 		private static string _registrySubKey = "SOFTWARE\\TextCrypter";
 
 		private bool _wordWrap;
+		private bool _showEncryptedText;
 		private Font _font;
 
 		public bool WordWrap
@@ -23,6 +24,19 @@ namespace TextCrypter
 			set
 			{
 				_wordWrap = value;
+				Save();
+			}
+		}
+
+		public bool ShowEncryptedText
+		{
+			get
+			{
+				return _showEncryptedText;
+			}
+			set
+			{
+				_showEncryptedText = value;
 				Save();
 			}
 		}
@@ -40,27 +54,44 @@ namespace TextCrypter
 			}
 		}
 
-		public FormMainConfig()
+		public FormMainConfig() : this(false, false, new Font(FontFamily.GenericMonospace, 10))
 		{
-			_wordWrap = false;
-			_font = new Font(FontFamily.GenericMonospace, 10);
+		}
+
+		public FormMainConfig(bool wordWrap, bool showEncryptedText, Font font)
+		{
+			_wordWrap = wordWrap;
+			_showEncryptedText = showEncryptedText;
+			_font = font;
 		}
 
 		public void Save()
 		{
-			string q = _font.ToString();
-			var w = _font.ToHfont();
-			/*
 			var key = Registry.CurrentUser.CreateSubKey(_registrySubKey);
 			key.SetValue("WordWrap", _wordWrap ? 1 : 0);
-			key.SetValue("FontName", _font);
+			key.SetValue("ShowEncryptedText", _wordWrap ? 1 : 0);
+			key.SetValue("Font", new FontConverter().ConvertToString(_font));
 			key.Close();
-			*/
 		}
 
 		public static FormMainConfig FromRegistry()
 		{
-			return new FormMainConfig();
+			var key = Registry.CurrentUser.CreateSubKey(_registrySubKey);
+
+			bool wordWrap = (int)key.GetValue("WordWrap", 0) != 0;
+			bool showEncText = (int)key.GetValue("ShowEncryptedText", 0) != 0;
+
+			var tmp = key.GetValue("Font");
+			Font font;
+			if (tmp == null)
+			{
+				font = new Font(FontFamily.GenericMonospace, 10);
+			}
+			else
+			{
+				font = (Font)(new FontConverter().ConvertFromString((string)tmp));
+			}
+			return new FormMainConfig(wordWrap, showEncText, font);
 		}
 	}
 }
