@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextCrypter", "TextCrypter\TextCrypter.csproj", "{E654303B-B2B4-47BA-890B-76731176DAC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextCrypter.Classes", "TextCrypter.Classes\TextCrypter.Classes.csproj", "{F08EBFB7-E2AF-47E2-9772-F653D18220F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E654303B-B2B4-47BA-890B-76731176DAC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E654303B-B2B4-47BA-890B-76731176DAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E654303B-B2B4-47BA-890B-76731176DAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E654303B-B2B4-47BA-890B-76731176DAC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08EBFB7-E2AF-47E2-9772-F653D18220F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08EBFB7-E2AF-47E2-9772-F653D18220F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08EBFB7-E2AF-47E2-9772-F653D18220F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08EBFB7-E2AF-47E2-9772-F653D18220F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
