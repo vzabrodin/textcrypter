@@ -69,7 +69,7 @@ namespace TextCrypter
 		{
 			var key = Registry.CurrentUser.CreateSubKey(_registrySubKey);
 			key.SetValue("WordWrap", _wordWrap ? 1 : 0);
-			key.SetValue("ShowEncryptedText", _wordWrap ? 1 : 0);
+			key.SetValue("ShowEncryptedText", _showEncryptedText ? 1 : 0);
 			key.SetValue("Font", new FontConverter().ConvertToString(_font));
 			key.Close();
 		}
