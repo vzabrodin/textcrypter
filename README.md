@@ -1,4 +1,4 @@
-# SavePass #
+# TextCrypter #
 
 Text editor with ability of encrypting files
 
