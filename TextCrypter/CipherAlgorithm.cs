@@ -1,9 +1,9 @@
-﻿namespace TextCrypter.Classes
+﻿namespace TextCrypter
 {
 	public enum CipherAlgorithm
 	{
-		AES,
-		RSA,
+		Aes,
+		Rsa,
 		Vigenere,
 		OneTimePad
 	}

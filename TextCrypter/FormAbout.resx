@@ -138,4 +138,7 @@
   <metadata name="okButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="FormAbout_Title" xml:space="preserve">
+    <value>About {0}</value>
+  </data>
 </root>

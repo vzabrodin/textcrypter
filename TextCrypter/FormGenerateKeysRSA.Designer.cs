@@ -1,6 +1,6 @@
 ﻿namespace TextCrypter
 {
-	partial class FormGenerateKeysRSA
+	partial class FormGenerateKeysRsa
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -88,7 +88,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "FormGenerateKeysRSA";
+			this.Name = "FormGenerateKeysRsa";
 			this.Text = "Generate RSA Keys";
 			this.ResumeLayout(false);
 			this.PerformLayout();

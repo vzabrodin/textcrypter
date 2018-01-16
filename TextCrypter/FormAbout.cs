@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Windows.Forms;
 
 namespace TextCrypter
@@ -9,11 +8,11 @@ namespace TextCrypter
 		public FormAbout()
 		{
 			InitializeComponent();
-			this.Text = String.Format("About {0}", AssemblyTitle);
-			this.labelProductName.Text = AssemblyProduct;
-			this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-			this.labelCopyright.Text = AssemblyCopyright;
-			this.labelCompanyName.Text = AssemblyCompany;
+			Text = $"About {AssemblyTitle}";
+			labelProductName.Text = AssemblyProduct;
+			labelVersion.Text = $"Version {AssemblyVersion}";
+			labelCopyright.Text = AssemblyCopyright;
+			labelCompanyName.Text = AssemblyCompany;
 		}
 
 		#region Методы доступа к атрибутам сборки

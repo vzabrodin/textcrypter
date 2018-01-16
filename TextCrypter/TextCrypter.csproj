@@ -50,6 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CipherAlgorithm.cs" />
+    <Compile Include="CryptFileMan.cs" />
+    <Compile Include="Crypto\AES.cs" />
+    <Compile Include="Crypto\ICryptoAlgorithm.cs" />
+    <Compile Include="Crypto\OneTimePad.cs" />
+    <Compile Include="Crypto\RSA.cs" />
+    <Compile Include="Crypto\Vigenere.cs" />
+    <Compile Include="Exceptions\WrongKeyException.cs" />
     <Compile Include="FormAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +85,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ByteExtensions.cs" />
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,12 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TextCrypter.Classes\TextCrypter.Classes.csproj">
-      <Project>{f08ebfb7-e2af-47e2-9772-f653d18220f9}</Project>
-      <Name>TextCrypter.Classes</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_png.png" />
